@@ -1,3 +1,14 @@
+# tile type basis
+# 0 = empty black rectangle
+# 1 = dot    ;     2 = big dot
+# 3 = vertical line 
+# 4 = horizontal line
+# 5 = top right curve
+# 6 = top left curve 
+# 7 = bottom left curve
+# 8 = bottom right curve
+# 9 = gate pacman
+
 boards = [
     [6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5],
     [3, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 3],
