@@ -41,6 +41,8 @@ def draw_misc():
     screen.blit(score_text, (10, 920))
     if powerup:
        pygame.draw.circle(screen, "blue", (140, 930), 15) 
+    for i in range(lives):
+        screen.blit(pygame.transform.scale(player_images[0], (30, 30)), (650 + i * 40, 915))
                              
 def check_collisions(scor, power, power_count, eaten_ghosts):
     num1 = (height - 50) // 32
