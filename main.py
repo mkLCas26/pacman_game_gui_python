@@ -16,6 +16,12 @@ font = pygame.font.Font("freesansbold.ttf", 20)
 level = boards
 color = "blue"
 pi = math.pi
+player_imges = []
+
+for i in range(1, 5):
+    player_imges.append(pygame.transform.scale(pygame.image.load(f"media/pacman_player/{i}.png"), (45, 45)))
+
+
 
 def draw_board():
     num1 = ((height - 50) // 32)
@@ -49,12 +55,17 @@ def draw_board():
                 pygame.draw.line(screen, "white", (col * num2, row * num1 + (0.5 * num1)),
                                  ((col * num2) + num2, row * num1 + (0.5 * num1)), 3)
 
+def draw_player():
+    pass
+
+
 # running display
 run = True
 while run: 
     timer.tick(fps)
     screen.fill("black")
     draw_board()
+    draw_player()
     
     for event in pygame.event.get():
         if event.type == pygame.quit:
