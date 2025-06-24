@@ -30,6 +30,10 @@ direction_command = 0
 player_speed  = 2
 score = 0
 
+def draw_misc():
+    score_text = font.render(f'Score: {score}', True, "white")
+    screen.blit(score_text, (10, 920))
+                             
 def check_collisions(scor):
     num1 = (height - 50) // 32
     num2 = width // 30
@@ -42,7 +46,6 @@ def check_collisions(scor):
             scor += 50
     
     return scor
-
 
 def draw_board():
     num1 = ((height - 50) // 32)
@@ -165,6 +168,7 @@ while run:
     screen.fill("black")
     draw_board()
     draw_player()
+    draw_misc()
     
     center_x = player_x + 23
     center_y = player_y + 24   
