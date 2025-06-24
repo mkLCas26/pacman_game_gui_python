@@ -176,15 +176,20 @@ while run:
                 direction_command = direction
             if event.key == pygame.K_DOWN and direction_command == 3:
                 direction_command = direction
-                
-        for i in range(0, 4):
-          if direction_command == i and turns_allowed[i]:
-              direction = i
-              
-        if player_x > 900:
-            player_x = -47
-        elif player_x < -50:
-            player_x = 897
+      
+    if direction_command == 0 and turns_allowed[0]:
+        direction = 0
+    if direction_command == 1 and turns_allowed[1]:
+        direction = 1
+    if direction_command == 2 and turns_allowed[2]:
+        direction = 2
+    if direction_command == 3 and turns_allowed[3]:
+        direction = 3
+            
+    if player_x > 900:
+        player_x = -47
+    elif player_x < -50:
+        player_x = 897
           
     pygame.display.flip()
 pygame.quit()
