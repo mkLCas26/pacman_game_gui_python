@@ -2,9 +2,10 @@
 import pygame
 from pacboard import boards
 
-
+# initialize pygame
 pygame.init()
 
+# display screen and other necessities
 width = 900
 height = 950
 screen = pygame.display.set_mode([width, height])
@@ -13,7 +14,7 @@ fps = 60
 font = pygame.font.Font("freesansbold.ttf", 20)
 level = boards
 
-
+# running display
 run = True
 while run: 
     timer.tick(fps)
