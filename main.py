@@ -27,6 +27,7 @@ counter = 0
 flicker = False
 turns_allowed = [False, False, False, False]
 direction_command = 0
+player_speed  = 2
 
 def draw_board():
     num1 = ((height - 50) // 32)
@@ -122,6 +123,17 @@ def check_position(centerx, centery):
         turns[1] = True
     return turns
 
+def move_player(play_x, play_y):
+    if direction == 0 and turns_allowed[0]:
+        play_x += player_speed
+    elif direction == 1 and turns_allowed[1]:
+        play_x -= player_speed
+    if direction == 2 and turns_allowed[2]:
+        play_y -= player_speed
+    elif direction == 3 and turns_allowed[3]:
+        play_y += player_speed
+    return play_x, play_y
+
 # running display
 run = True
 while run: 
@@ -141,8 +153,7 @@ while run:
     center_x = player_x + 23
     center_y = player_y + 24   
     turns_allowed = check_position(center_x, center_y)
-    
-    
+    player_x, player_y = move_player(player_x, player_y)
     
     for event in pygame.event.get():
         if event.type == pygame.quit:
