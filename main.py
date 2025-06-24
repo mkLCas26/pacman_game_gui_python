@@ -24,6 +24,7 @@ player_x = 450
 player_y = 663
 direction = 0
 counter = 0
+flicker = False
 
 def draw_board():
     num1 = ((height - 50) // 32)
@@ -33,7 +34,7 @@ def draw_board():
         for col in range(len(level[row])):
             if level[row][col] == 1:
                 pygame.draw.circle(screen, "white", (col * num2 + (0.5 * num2), row * num1 + (0.5 * num1)), 4)
-            if level[row][col] == 2:
+            if level[row][col] == 2 and not flicker:
                 pygame.draw.circle(screen, "white", (col * num2 + (0.5 * num2), row * num1 + (0.5 * num1)), 10)
             if level[row][col] == 3:
                 pygame.draw.line(screen, color, (col * num2 + (0.5 * num2), row * num1 ),
@@ -75,12 +76,16 @@ while run:
     timer.tick(fps)
     if counter < 19:
         counter += 1
+        if counter > 3:
+            flicker = False
     else:
         counter = 0
+        flicker = True
         
     screen.fill("black")
     draw_board()
     draw_player()
+    
     
     for event in pygame.event.get():
         if event.type == pygame.quit:
