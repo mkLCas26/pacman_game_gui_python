@@ -29,6 +29,9 @@ def draw_board():
             if level[row][col] == 3:
                 pygame.draw.line(screen, color, (col * num2 + (0.5 * num2), row * num1 ),
                                  (col * num2 + (0.5 * num2), (row * num1) + num1), 3)
+            if level[row][col] == 4:
+                pygame.draw.line(screen, color, (col * num2, row * num1 + (0.5 * num1)),
+                                 ((col * num2) + num2, row * num1 + (0.5 * num1)), 3)
             
 
 # running display
