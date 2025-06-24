@@ -20,12 +20,12 @@ player_images = []
 
 for i in range(1, 5):
     player_images.append(pygame.transform.scale(pygame.image.load(f"media/pacman_player/{i}.png"), (45, 45)))
-blinky_img.append(pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/redg.png"), (45, 45)))
-pinky_img.append(pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/pinkg.png"), (45, 45)))
-inky_img.append(pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/blueg.png"), (45, 45)))
-clyde_img.append(pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/yellowg.png"), (45, 45)))
-spooked_img.append(pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/powerg.png"), (45, 45)))
-dead_img.append(pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/dead.png"), (45, 45)))
+blinky_img = pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/redg.png"), (45, 45))
+pinky_img = pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/pinkg.png"), (45, 45))
+inky_img = pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/blueg.png"), (45, 45))
+clyde_img = pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/yellowg.png"), (45, 45))
+spooked_img = pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/powerg.png"), (45, 45))
+dead_img = pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/dead.png"), (45, 45))
 
 player_x = 450
 player_y = 663
