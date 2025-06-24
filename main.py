@@ -8,7 +8,7 @@ pygame.init()
 
 # display screen and other necessities
 width = 900
-height = 700
+height = 950
 screen = pygame.display.set_mode([width, height])
 timer = pygame.time.Clock()
 fps = 60
@@ -16,12 +16,14 @@ font = pygame.font.Font("freesansbold.ttf", 20)
 level = boards
 color = "blue"
 pi = math.pi
-player_imges = []
+player_images = []
 
 for i in range(1, 5):
-    player_imges.append(pygame.transform.scale(pygame.image.load(f"media/pacman_player/{i}.png"), (45, 45)))
-
-
+    player_images.append(pygame.transform.scale(pygame.image.load(f"media/pacman_player/{i}.png"), (45, 45)))
+player_x = 450
+player_y = 663
+direction = 0
+counter = 0
 
 def draw_board():
     num1 = ((height - 50) // 32)
@@ -56,7 +58,15 @@ def draw_board():
                                  ((col * num2) + num2, row * num1 + (0.5 * num1)), 3)
 
 def draw_player():
-    pass
+    # 0 - right, 1 - left, 2 - up, 3 - down
+    if direction == 0:
+        screen.blit(player_images[counter // 5], (player_x, player_y))
+    elif direction == 1:
+        screen.blit(pygame.transform.flip(player_images[counter // 5], True, False), (player_x, player_y))
+    elif direction == 2:
+        screen.blit(pygame.transform.rotate(player_images[counter // 5], 90), (player_x, player_y))
+    elif direction == 3:
+        screen.blit(pygame.transform.rotate(player_images[counter // 5], 270), (player_x, player_y))
 
 
 # running display
