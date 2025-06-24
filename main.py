@@ -30,6 +30,24 @@ dead_img = pygame.transform.scale(pygame.image.load(f"media/ghost_imgs/dead.png"
 player_x = 450
 player_y = 663
 direction = 0
+
+blinky_x = 56
+blinky_y = 58
+blinky_direction = 0
+
+pinky_x = 440
+pinky_y = 438
+pinky_direction = 2
+
+inky_x = 440
+inky_y = 388
+inky_direction = 2
+
+clyde_x = 440
+clyde_y = 488
+clyde_direction = 2
+
+
 counter = 0
 flicker = False
 turns_allowed = [False, False, False, False]
@@ -39,6 +57,7 @@ score = 0
 powerup = False
 power_counter = 0
 eaten_ghost = [False, False, False, False]
+targets = [()]]
 moving = False
 startup_counter = 0
 lives = 3
