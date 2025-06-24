@@ -13,6 +13,8 @@ timer = pygame.time.Clock()
 fps = 60
 font = pygame.font.Font("freesansbold.ttf", 20)
 level = boards
+color = "blue"
+
 
 def draw_board():
     num1 = ((height - 50) // 32)
@@ -24,6 +26,9 @@ def draw_board():
                 pygame.draw.circle(screen, "white", (col * num2 + (0.5 * num2), row * num1 + (0.5 * num1)), 4)
             if level[row][col] == 2:
                 pygame.draw.circle(screen, "white", (col * num2 + (0.5 * num2), row * num1 + (0.5 * num1)), 10)
+            if level[row][col] == 3:
+                pygame.draw.line(screen, color, (col * num2 + (0.5 * num2), row * num1 ),
+                                 (col * num2 + (0.5 * num2), (row * num1) + num1), 3)
             
 
 # running display
