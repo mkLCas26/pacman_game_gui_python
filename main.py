@@ -73,6 +73,11 @@ def draw_player():
 run = True
 while run: 
     timer.tick(fps)
+    if counter < 19:
+        counter += 1
+    else:
+        counter = 0
+        
     screen.fill("black")
     draw_board()
     draw_player()
