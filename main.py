@@ -36,7 +36,15 @@ def draw_board():
             if level[row][col] == 5:
                 pygame.draw.arc(screen, color, 
                                 [(col * num2 - (num2 * 0.4)) - 2, (row * num1 + (0.5 * num1)), num2, num1], 0, pi/2, 3)
-                
+            if level[row][col] == 6:
+                pygame.draw.arc(screen, color, 
+                                [(col * num2 + (num2 * 0.5)), (row * num1 + (0.5 * num1)), num2, num1], pi/2, pi, 3)
+            if level[row][col] == 7:
+                pygame.draw.arc(screen, color, 
+                                [(col * num2 + (num2 * 0.5)), (row * num1 - (0.4 * num1)), num2, num1], pi, 3 * pi/2, 3)
+            if level[row][col] == 8:
+                pygame.draw.arc(screen, color, 
+                                [(col * num2 - (num2 * 0.4)) - 2, (row * num1 - (0.4 * num1)), num2, num1], 3 * pi/2, 2 * pi, 3)   
             if level[row][col] == 9:
                 pygame.draw.line(screen, "white", (col * num2, row * num1 + (0.5 * num1)),
                                  ((col * num2) + num2, row * num1 + (0.5 * num1)), 3)
