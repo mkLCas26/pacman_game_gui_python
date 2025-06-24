@@ -28,6 +28,21 @@ flicker = False
 turns_allowed = [False, False, False, False]
 direction_command = 0
 player_speed  = 2
+score = 0
+
+def check_collisions(scor):
+    num1 = (height - 50) // 32
+    num2 = width // 30
+    if 0 < player_x < 870:
+        if level[center_y // num1][center_x // num2] == 1:
+            level[center_y // num1][center_x // num2] = 0 
+            scor += 10
+        if level[center_y // num1][center_x // num2] == 2:
+            level[center_y // num1][center_x // num2] = 0 
+            scor += 50
+    
+    return scor
+
 
 def draw_board():
     num1 = ((height - 50) // 32)
@@ -134,6 +149,7 @@ def move_player(play_x, play_y):
         play_y += player_speed
     return play_x, play_y
 
+
 # running display
 run = True
 while run: 
@@ -154,6 +170,7 @@ while run:
     center_y = player_y + 24   
     turns_allowed = check_position(center_x, center_y)
     player_x, player_y = move_player(player_x, player_y)
+    score = check_collisions(score)
     
     for event in pygame.event.get():
         if event.type == pygame.quit:
